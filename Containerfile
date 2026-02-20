@@ -4,6 +4,7 @@
 
 FROM quay.io/hummingbird/core-runtime:2-builder AS build
 
+USER root
 RUN dnf install -y autoconf automake gcc make glibc-static && dnf clean all
 
 COPY tinyproxy/ /tinyproxy/
