@@ -4,8 +4,6 @@
 
 FROM quay.io/hummingbird/core-runtime:2-builder AS build
 
-RUN apk add --no-cache autoconf automake build-base
-
 COPY tinyproxy/ /tinyproxy/
 
 RUN set -x \
@@ -18,7 +16,7 @@ RUN set -x \
         --prefix=/ \
     && make -j$(nproc)
 
-FROM quay.io/hummingbird/core-runtime
+FROM quay.io/hummingbird/core-runtime:2
 
 COPY --from=build /tinyproxy/src/tinyproxy /usr/bin/tinyproxy
 
