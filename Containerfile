@@ -19,7 +19,7 @@ RUN set -x \
         --prefix=/ \
     && make -j$(nproc)
 
-FROM quay.io/hummingbird/core-runtime:2
+FROM quay.io/hummingbird/curl:8
 
 COPY --from=build /tinyproxy/src/tinyproxy /usr/bin/tinyproxy
 
