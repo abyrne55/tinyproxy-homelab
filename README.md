@@ -24,7 +24,7 @@ podman run -d \
 Built using [project-hummingbird](https://quay.io/organization/hummingbird) distroless base images:
 
 - **Builder**: `quay.io/hummingbird/core-runtime:2-builder` — build environment for compiling the static binary
-- **Runtime**: `quay.io/hummingbird/core-runtime` — minimal distroless runtime
+- **Runtime**: `quay.io/hummingbird/curl:8` — minimal distroless runtime with curl for healthchecks
 
 Container runs as non-root user (UID 65532).
 
