@@ -43,4 +43,4 @@ podman build -t tinyproxy-homelab:latest -f Containerfile .
 
 ## CI/CD
 
-On push to `main`, GitHub Actions builds an arm64 image and pushes to GHCR, signed with Cosign.
+On push to `main`, GitHub Actions builds a multi-arch (amd64 + arm64) image and pushes to GHCR, signed with Cosign.
